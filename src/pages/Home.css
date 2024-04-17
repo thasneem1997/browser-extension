@@ -1,0 +1,29 @@
+.home-container{
+    color: white;
+    text-align: center;
+    padding-top: 150px;
+
+}
+.home-container h1{
+    font-size: 45px;
+    
+}
+.home-container h2{
+    font-size: 50px;
+    margin-top: 40px;
+    font-weight: 400;
+}
+.inputbox{
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    color: white;
+    width: 100vh;
+    text-align: center;
+    font-size: 35px; 
+    margin-top: 20px;
+}
+.inputbox:focus{
+    outline: none;
+
+}

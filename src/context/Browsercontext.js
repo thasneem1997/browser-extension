@@ -1,19 +1,24 @@
-import { useContext,createContext} from "react";
+import { useContext,createContext,useReducer} from "react";
+import { BrowserReducer } from "../reducer/Browserreducer";
 import React from "react";
 
-const initailvalue={
-    name:" "
+const initailvalue= {
+    name:""
 }
-const Browsercontext = createContext(initailvalue);
-const Browserprovider = ({Children})=>{
+const browsercontext = createContext(initailvalue);//intailizing context
+
+const BrowserProvider = ({children})=>{
+    const [{name},browserdispatch]=useReducer(BrowserReducer,initailvalue)
+
     return(
-        <Browsercontext.Provider>
-        {Children}
-        </Browsercontext.Provider>
+        
+        <browsercontext.Provider value={{name,browserdispatch}}>
+        {children}
+        </browsercontext.Provider>
     )
 
 }
-const useBrowser=()=>useContext(Browsercontext);
-export {useBrowser,Browserprovider}
+const useBrowser=()=>useContext(browsercontext);
+export { useBrowser, BrowserProvider}
 
 

@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons+Outlined");
+
+.task-container{
+    color: white;
+    text-align: center;
+    padding: 32px;
+}
+.task-container span{
+    font-size: 4.5rem;
+}
+.task-container h1{
+    font-size: 8rem;
+   
+}
+h2{
+    font-size: 2.8rem;
+    font-weight: 100;
+
+}
+.inputbox{
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    color: white;
+    width: 100vh;
+    text-align: center;
+    font-size: 35px; 
+    margin-top: 20px;
+
+}
+.inputbox:focus{
+    outline: none;
+
+}
+label{
+font-size: 2.3rem;
+margin-left: -13px;
+
+
+}
+.checkstyle{
+ font-size: 4rem;
+ width: 100px;
+display: flex;
+}
+.inputstyle{
+    width: 100px;
+    height: 30px;
+  
+    
+}
+.strike-through{
+    text-decoration: line-through;
+}
+.buttonclose{
+    background: transparent;
+    border: none;
+    color: white; 
+    width: 10px;
+    height: 10px;
+   
+    margin-top: 20px;
+    cursor: pointer;
+}
+.material-icons-outlined{
+  font-size: 20px;
+}
+.qoutes{
+    font-size: 1.3rem;
+    font-weight: 100;
+    margin-top: 80px;
+    
+}

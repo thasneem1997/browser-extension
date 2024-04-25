@@ -1,4 +1,4 @@
-export const quotes = [
+export const Qoutes = [
     {
       quote:
         "You must be the change you wish to see in the world. – Mahatma Gandhi"

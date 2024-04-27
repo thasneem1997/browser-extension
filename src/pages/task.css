@@ -3,7 +3,9 @@
 .task-container{
     color: white;
     text-align: center;
-    padding: 32px;
+    padding-top: 3rem;
+    height: 100vh;
+    position: relative;
 }
 .task-container span{
     font-size: 4.5rem;
@@ -69,5 +71,17 @@ display: flex;
     font-size: 1.3rem;
     font-weight: 100;
     margin-top: 80px;
+    text-align: center;
+   
     
+}
+.todo{
+    font-size: 2rem;
+   
+    font-weight: 600;
+    margin-left: 1200px;
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+    border: none;
 }

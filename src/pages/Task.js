@@ -1,13 +1,14 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { useBrowser } from "../context/Browsercontext";
-import { Qoutes } from '../db/Qoutes'
+import { Qoutes } from "../db/Qoutes";
+import Todo from "../component/Todo";
 
-const index = Math.floor(Math.random()*Qoutes.length)
+const index = Math.floor(Math.random() * Qoutes.length);
 const Qouteslist = Qoutes[index].quote;
 function Task() {
   const { time, message, name, browserdispatch, task } = useBrowser();
   const [ischecked, setischecked] = useState(false);
-  
+  const [istodo, setistodo] = useState(false);
 
   useEffect(() => {
     getcurrenttime();
@@ -15,7 +16,15 @@ function Task() {
   useEffect(() => {
     const userTask = localStorage.getItem("task");
     browserdispatch({ type: "TASK", payload: userTask });
-  }, []);
+    if(new Date().getDate()!==Number(localStorage.getItem("date")))
+    {
+      localStorage.removeItem("task");
+      localStorage.removeItem("date");
+
+      localStorage.removeItem("checkstatus");
+    }
+  }
+  , []);
   useEffect(() => {
     const checkstatus = localStorage.getItem("checkstatus");
     if (checkstatus === "true") {
@@ -53,16 +62,18 @@ function Task() {
   const handlesubmit = (event) => {
     event.preventDefault();
   };
-  const handlecloseclick=(event)=>{
-    browserdispatch({type:"CLOSE"});
-    setischecked(false)
+  const handlecloseclick = (event) => {
+    browserdispatch({ type: "CLOSE" });
+    setischecked(false);
     localStorage.removeItem("task");
 
     localStorage.removeItem("checkstatus");
-
-  }
+  };
+  const handletodoclick = (event) => {
+    setistodo((istodo) => !istodo);
+  };
   return (
-    <div className="task-container" >
+    <div className="task-container">
       <h1>{time}</h1>
       <span>
         {message},{name}
@@ -71,7 +82,6 @@ function Task() {
         <Fragment>
           <h2>what is your main focus today</h2>
           <form onSubmit={handlesubmit}>
-            {" "}
             <input className="inputbox" onKeyDown={handlefocus} />
           </form>
         </Fragment>
@@ -88,7 +98,7 @@ function Task() {
             htmlfor="checkstyle"
             className={`${ischecked ? "strike-through" : ""}`}
           >
-            {task}{" "}
+            {task}
           </label>
           <button className="buttonclose">
             <span
@@ -98,13 +108,19 @@ function Task() {
             >
               clear
             </span>
-           
           </button>
-         
         </Fragment>
-        
       )}
-      <div> <p className="qoutes" >{Qouteslist}</p></div>
+      <div>
+        {" "}
+        <p className="qoutes">{Qouteslist}</p>
+      </div>
+      {istodo && <Todo />}
+      <div>
+        <button className="todo" onClick={handletodoclick}>
+          Todo
+        </button>
+      </div>
     </div>
   );
 }

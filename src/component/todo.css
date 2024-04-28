@@ -59,4 +59,9 @@
   .strike{
     text-decoration: line-through;
   }
+  @media screen and (max-width: 768px) {
+    .todo-container{
+        width:50%;
+    }
+  }
 

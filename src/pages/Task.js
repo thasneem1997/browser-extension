@@ -111,16 +111,16 @@ function Task() {
           </button>
         </Fragment>
       )}
-      <div>
-        {" "}
+      
+       
         <p className="qoutes">{Qouteslist}</p>
-      </div>
+      
       {istodo && <Todo />}
-      <div>
+   
         <button className="todo" onClick={handletodoclick}>
           Todo
         </button>
-      </div>
+      
     </div>
   );
 }

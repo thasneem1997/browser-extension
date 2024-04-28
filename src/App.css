@@ -1,8 +1,8 @@
 @import url("./styles/utility.css");
 
 .app {
-  width: 100%; /* make the image responsive by default */
-  height: auto;
+  width: 100%; 
+  height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -19,6 +19,6 @@
 @media (max-width: 400px) {
   .app {
       width: 100%; /* adjust width to full container on very small screens */
-      height: auto; /* maintain the aspect ratio */
+      height: 100vh; /* maintain the aspect ratio */
   }
 }

@@ -27,3 +27,16 @@
     outline: none;
 
 }
+@media screen and (max-width: 768px) {
+    .home-container{
+        width: 100%;
+        padding-top:118px;
+        margin: 0 auto;
+        text-align: center;
+    
+    }
+    .home-container h1{
+        font-size: 30px;
+        
+    }
+}

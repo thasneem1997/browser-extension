@@ -3,7 +3,7 @@
 .task-container{
     color: white;
     text-align: center;
-    padding-top: 3rem;
+    padding-top: 1rem;
     height: 100vh;
     position: relative;
 }
@@ -84,4 +84,30 @@ display: flex;
     background-color: transparent;
     color: white;
     border: none;
+}
+@media screen and (max-width: 768px) {
+    body{
+        margin:0;
+        padding:0;
+    }
+    h2{
+        font-size: 1rem;
+    }
+    .task-container span {
+        font-size: 1.5rem;}
+        .qoutes {
+            font-size: 10px;
+             width: 70vw;
+            margin-left: 29px;
+            margin-bottom: auto;}
+            .todo{
+                margin-left: 207px;
+                margin-top: -`2px;
+            }
+            .inputbox{
+                width:50%;
+            }
+            .task-container h1{
+                font-size: 5rem;
+            }
 }
